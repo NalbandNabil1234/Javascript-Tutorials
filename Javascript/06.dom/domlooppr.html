@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nabil</title>
+    <style>
+        *{
+            color: white;
+            background: #292929;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="headings">this is first</h1>
+    <h1 class="headings">this is second</h1>
+    <h1 class="headings">this is third</h1>
+    <h1 class="headings">this is fourth</h1>
+    <h1 class="headings">this is fifth</h1>
+
+    <script>
+        let allHeadings = document.querySelectorAll('.headings')
+        console.log(allHeadings)
+        
+        const arrOfColor = ['red','pink','orange','green','yellow']
+        console.log(arrOfColor)
+
+        // applying colors to all headings using for each
+        // allHeadings.forEach((heading, colorIndex) => {
+        //     heading.style.color=arrOfColor[colorIndex]
+        //     // heading.innerText="Nabil"
+        // })
+
+        const textArr = ['Nabil','Jakir','Nalband','Amaan','Ali'] 
+
+        // trying using a for loop possible
+        for(let i=0; i<arrOfColor.length; i++){
+            allHeadings[i].style.color=arrOfColor[i]
+
+            allHeadings[i].innerText=textArr[i]
+        }
+
+        
+
+    </script>
+</body>
+</html>

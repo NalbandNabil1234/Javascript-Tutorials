@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            color: #fff;
+            background: #292929;
+        }
+    </style>
+</head>
+<body>
+    <ul class="listItems">
+        <li>Html</li>
+    </ul>
+
+    <script>
+        // adding li using a normal way
+        // const newli = document.createElement('li')
+        // // console.log(newli)
+        // newli.textContent='Nabil'
+        // document.querySelector('.listItems').appendChild(newli)
+
+        // but what if we want to add multiple li
+        // the solution is use of functions
+
+        // but this isnot the optimized way 
+        // function addingListOfLang(listItems){
+        //     const li = document.createElement('li')
+        //     // console.log(li)
+        //     li.innerText=listItems
+        //     document.querySelector('.listItems').appendChild(li)
+        // }
+        // addingListOfLang('Css')
+        // addingListOfLang('Javascript')
+
+        // optimized way
+        // function addLangItemsList(language){
+        //     const li = document.createElement('li')
+        //     // console.log(li)
+        //     li.textContent='language'
+        //     document.querySelector('.listItems').appendChild(li)
+        // }
+        // addLangItemsList('Css')
+
+        // more optimized approach
+        function addLang(lang){
+            const li = document.createElement('li')
+            li.appendChild(document.createTextNode(lang))
+            document.querySelector('.listItems').appendChild(li)
+        }
+        addLang('Css')
+        addLang('Javascript')
+        addLang('react')
+        addLang('NodeJs')
+
+        //Edit
+        const first = document.querySelector('li:first-child')
+        
+        //first way to edit
+        // first.innerHTML='db'
+        
+        // 2nd way
+        // first.innerText='db'
+
+        //3rd way by creating new li and then adding text to that li and then replacing it with the first 
+        const firstEditedText = document.createElement('li')
+        firstEditedText.textContent='js'
+        first.replaceWith(firstEditedText)
+
+        // 4th way
+        // if selecting with a class name then use >
+        const second = document.querySelector('.listItems > li:nth-child(2)')
+        second.outerHTML='<li>DB</li>'
+
+        // remove
+        const fifth = document.querySelector('.listItems > li:nth-child(5)')
+        console.log(fifth)
+        fifth.remove()
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nabil Bhai</title>
+    <style>
+        *{
+            background: #292929;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const div = document.createElement('div')
+        console.log(div)
+        div.className = "div1"
+        div.id = "firstDiv"
+        
+        // best method to add attribute is
+        // div.setAttribute('class','Nabil')
+        div.setAttribute('title','divsTitle')
+        
+        div.style.color='red'
+        div.style.backgroundColor='white'
+        div.style.padding='12px'
+        div.style.border='2px solid red'
+        div.style.maxWidth='50vw'
+        // if dont want to manipulate the text before adding it to element thne use innertext its easy and faster to add a text
+        // div.innerText='Nabil bro'
+
+        // if want tot add text or change it before attaching it to any element then use createTextNode method which creates a indepemdent textnode but both are same
+        const textNode = document.createTextNode('HI, NABIL')
+
+        textNode.textContent+='NALBAND'
+
+        //now we have to add it to the div
+        div.appendChild(textNode)
+
+        // this is must in both case
+        document.body.append(div)
+    </script>
+</body>
+</html>

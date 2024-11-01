@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nabil Bhai</title>
+    <style>
+       *{
+        background: #292929;
+        color: #fff;
+        text-align: center;
+       }
+
+    </style>
+</head>
+<body>
+    <div class="parent1">
+        <h3 class="headings">this is first</h3>
+        <h3 class="headings">this is second</h3>
+        <h3 class="headings">this is third</h3>
+        <h3 class="headings">this is fourth</h3>
+        <h3 class="headings">this is fifth</h3>
+    </div>
+
+    <script>
+        const parent = document.querySelector(".parent1")
+        console.log(parent)
+
+        const childrenOfParent = parent.children
+        console.log(childrenOfParent)
+
+        const firstChildOfParent = childrenOfParent[0]
+        // console.log(firstChildOfParent)
+
+        // for(let i=0; i<parent.children.length; i++){
+        //     console.log(parent.children[i])
+        // }
+
+        // for(let i=0; i<childrenOfParent.length; i++){
+        //     console.log(childrenOfParent[i].innerText)
+        // }
+
+        for(let i=0; i<childrenOfParent.length; i++){
+            childrenOfParent[i].style.color="red"
+            childrenOfParent[i].style.border="2px solid green"
+            childrenOfParent[i].style.background="grey"
+        }
+
+        // childrenOfParent[1].style.color="pink"
+
+        console.log(parent.firstElementChild)
+
+        // child ro parentmove
+        console.log(childrenOfParent[1].parentElement)
+
+        const documentChildren = document.children
+        console.log(documentChildren)
+
+        const childrenOfHtml = documentChildren[0].children
+        console.log(childrenOfHtml)
+
+        const childrenOfBody = childrenOfHtml[1].childNodes
+        console.log(childrenOfBody)
+
+
+        const nextSiblingOfChildrenOfBody = childrenOfBody[0].nextSibling
+        console.log(nextSiblingOfChildrenOfBody)
+        console.log(nextSiblingOfChildrenOfBody.innerText)
+
+        // converting the inner texts of all h3 in an array
+        
+            // tried but failed
+            // const arrayOfH3 = Array.from(parent.children)
+            // console.log(arrayOfH3)
+
+            // const headingsTextArray = Array.from(document.querySelectorAll(".headings"))
+            // console.log(headingsTextArray)
+        
+        // passed converting    
+        const ArrayOfAllH3InnerText = Array.from(document.querySelectorAll('h3')).map((h3)=> {
+            return h3.innerText
+        })
+        console.log(ArrayOfAllH3InnerText)
+
+       
+
+
+        const ArrayOfAllTextOfHeadings = Array.from(document.querySelectorAll(".headings"))
+        console.log(ArrayOfAllTextOfHeadings)
+        
+        // same but different way to do it
+        const arrayText = ArrayOfAllTextOfHeadings.map((h3) => {
+           return h3.innerText
+        })
+        console.log(arrayText)
+
+    </script>
+</body>
+</html>

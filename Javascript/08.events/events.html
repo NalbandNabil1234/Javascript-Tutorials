@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nabil Bhai</title>
+    <style>
+        img{
+            width: 250px;
+        }
+    </style>
+</head>
+<!--  -->
+<body>
+    <ul id="images">
+        <li><img src="img1.jpeg" id="C" alt="" srcset=""></li>
+        <!-- we can add the onclick event inside the html but it is not a good approach because it is inline js and xss is possible here like -->
+        <!-- <li><img src="img2.jpeg" id="HTML5" onClick="alert('owl')" srcset=""></li> -->
+        <li><img src="img2.jpeg" id="HTML5" srcset=""></li>
+        <li><img src="img3.jpeg" id="PYTHON" alt="" srcset=""></li>
+        <li><img src="img4.jpeg" id="JS" alt="" srcset=""></li>
+        <li><img src="img5.jpeg" id="C++" alt="" srcset=""></li>
+        <a id="google" href="https://google.com">Click here to visit google page</a>
+    </ul>
+</body>
+<script>
+    // it is also not a good approach 
+    // document.getElementById('PYTHON').onclick = function(){
+    //     alert('Python img selected')
+    // }
+
+    // new approach is to use add eventlistner because it gives you a flexibiliuty to add multiple events whuch will also looks good and will prevent from xss atack
+
+    // const languageJs = document.querySelector('#JS')
+    // languageJs.addEventListener('click', function(e){
+    //     alert('JS language img is clicked')
+    // })
+
+    // event propagation - there are two context of it event bubling and event capturing
+    // bubbling is from inside to outside the events will be executed as shown below and is done if the third is false it is by default false
+    // const images = document.getElementById('images')
+    // images.addEventListener('click', function(e){
+    //     console.log('Outer Ul is targeted')
+    // }, false)
+
+    // const innerSingleLi = document.getElementById('JS')
+    // innerSingleLi.addEventListener('click', function(e){
+    //     console.log('Js is targeted')
+    // }, false)
+
+    // event capturing
+    //we have to give true for it in event capturing what happene is the outer one is exexuted first and then the inner 
+    // const images = document.getElementById('images')
+    // images.addEventListener('click', function(e){
+    //     console.log('Outer Ul is targeted')
+    // }, true)
+
+    // const innerSingleLi = document.getElementById('JS')
+    // innerSingleLi.addEventListener('click', function(e){
+    //     console.log('Js is targeted')
+    // }, true)
+
+    // for preventing anyi of the event propagationi we can use e.stopPropagation()
+    // const images = document.getElementById('images')
+    // images.addEventListener('click', function(e){
+    //     // e.stopPropagation()
+    //     console.log('Outer Ul is targeted')
+    // }, false)
+
+    // const innerSingleLi = document.getElementById('JS')
+    // innerSingleLi.addEventListener('click', function(e){
+    //     e.stopPropagation()
+    //     console.log('Js is targeted')
+    // }, false)
+
+    //
+    // const googleLink = document.getElementById('google')
+    // googleLink.addEventListener('click', function(e){
+    //     e.preventDefault()
+    //     alert('Google is prevented')
+    // })
+
+    // const Cpp = document.getElementById('C++')
+    // Cpp.addEventListener('click', function(e){
+    //     e.target.remove()
+    // })
+
+    const images = document.getElementById('images')
+    images.addEventListener('click', function(e){
+        let removeIt = e.target.parentNode
+        console.log(removeIt)
+        if(removeIt.tagName==='LI'){
+        removeIt.remove()
+        // another way
+        // removeIt.parentNode.removeChild(removeIt)
+        }
+    })
+</script>
+</html>
