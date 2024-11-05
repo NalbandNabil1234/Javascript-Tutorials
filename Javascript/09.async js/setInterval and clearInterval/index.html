@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval and clearInterval</title>
+    <style>
+        body{
+            background-color: #292929;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Hi Nabil</h3>
+    <button id="start" type="button">start</button>
+    <button id="stop" type="button">stop</button>
+</body>
+
+<script>
+    // setInterval is a method used to perform a specific task or execute the code continuously after a certain period of time (note : like settimeout it takes third paramter as argments also but it is optional)
+    // setInterval(function(Name){
+    //     console.log(`Hi ${Name}, Welcome to the tutorials`)
+    // }, 2000, 'Nabil')
+
+
+    //=======================a small practice of setInterval and clearInterval=========
+
+    // function for printing message
+    function startPrintingMessage(Name){
+        console.log(`Hi ${Name}, Welcome to the tutorials`)
+    }
+
+    // printing messagae after the start button is pressed
+    let setIntervalForMessage;
+
+    document.querySelector('#start').addEventListener('click', function(e){
+       if(!setIntervalForMessage){
+        setIntervalForMessage = setInterval(startPrintingMessage, 1000, 'Nabil')
+       }
+    })
+    
+    // for stopping the message from prnting on console after the stop btn is pressed
+    document.querySelector('#stop').addEventListener('click', function(e){
+        clearInterval(setIntervalForMessage)
+        setIntervalForMessage = ''
+    })
+    
+</script>
+</html>

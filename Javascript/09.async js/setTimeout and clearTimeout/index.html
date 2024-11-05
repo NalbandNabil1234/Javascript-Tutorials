@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout and clearTimeout methods</title>
+    <style>
+        body{
+            background: #292929;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 id="heading">Hello World!</h1>
+    <button type="button" id="btn">Stop</button>
+</body>
+
+<script>
+
+    // understanding of the methods used in this
+
+    // set timeout is a method which is used to do a task after a certain amount of time (Note: by the use of the settimeout we can crete our function asynchronous means it will get executed without stopping the next code to get executed)
+    // setTimeout(() => {
+    //     console.log('Hi Arun')
+    // }, 2000);
+
+    // there is also a method availble which can stop the settimeout method from happening 
+    // clearTimeout(changeText)
+
+    //==============================project starts here========
+
+    // changing the inner text of heading after 2 second
+    const h3 = document.querySelector('#heading')
+    let changeHeading = function(){
+        h3.innerHTML='Hi Nabil'
+        console.log('text Changed')
+    }
+    const changeText = setTimeout(changeHeading, 2000);
+
+    //stopping the changing of text after button is clicked
+    document.querySelector('#btn').addEventListener('click', function(e){
+        clearTimeout(changeText)
+        console.log('text changing is Stopped')
+    })
+</script>
+</html>
