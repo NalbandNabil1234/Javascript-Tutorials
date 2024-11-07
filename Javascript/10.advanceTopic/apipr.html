@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api request practice</title>
+</head>
+
+<body style="background-color: #292929; color: white; text-align: center;">
+    <h2>Api Request Practice</h2>
+</body>
+
+<script>
+    // created xmlhttprequest object using new keyword
+    const xhr = new XMLHttpRequest()
+    console.log(xhr)
+
+    // configuring the request
+    const link = 'https://api.github.com/users/hiteshchoudhary'
+    xhr.open('GET', link)
+
+    // checking the state of the request
+    // console.log(xhr.readyState)
+
+    // onreadystate change is nothing but  a property which is used to keep track of the ready state of the request
+    xhr.onreadystatechange = function(e){
+        console.log(this.readyState)
+        // checking whether the req is success so that the response can be stored
+        if(this.readyState === 4 && this.status === 200){
+            const data = JSON.parse(this.responseText)
+            console.log(data)
+            console.log(data.bio)
+        }
+    }
+
+    // finally sends the request to the server
+    xhr.send()
+
+</script>
+</html>

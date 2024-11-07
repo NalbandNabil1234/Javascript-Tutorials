@@ -1,0 +1,12 @@
+body{
+    background-color: #292929;
+    color: white;
+    text-align: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
