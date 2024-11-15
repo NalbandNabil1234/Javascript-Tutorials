@@ -1,0 +1,9 @@
+OOPS in Js:
+1) oops is nothing but a paradigm of writting a code (Basically the way of writting a code).
+2) in oop data and the functions are written in the class and that can be later consumed or accessed by multiple objects of that class.
+3) it helps organise the code and also maintain redability.
+4) 4 pillars or concepts of oops :
+   i) Encapsulation.
+   ii) Abstraction.
+   iii) Inheritance.
+   iv) Polymorphism.
