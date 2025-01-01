@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind In Js</title>
+</head>
+<body>
+    <button>Click Here</button>
+</body>
+<script>
+    // .bind is a method in js which is used for explicitely setting the this 
+    // context that is the current context of the class or function to the function or method which is called
+    // and this context here is permenantly set it is like a virtual class is created which can be reused i mean their properties
+    // it might be similar to .call but actually their working is different like .call is a temporary way of settign the this
+    // but .bind is used to permanantly set the this 
+    // and the .call is used to call the function explicitley also
+    // but bind is not used to call it is just the way of setting this permently
+    // class onClick{
+    //     constructor(username, password){
+    //         this.username = username
+    //         this.password = password
+    //         // document.querySelector('button').addEventListener('click', this.buttonClicked)
+    //         // here we have set this inside bind do that the button clicked can als access the on click properties which is not possible without .bind
+    //         document.querySelector('button').addEventListener('click', this.buttonClicked.bind(this))
+    //     }
+    //     buttonClicked(){
+    //         console.log('Button Clicked')
+    //         console.log(this)
+    //         // because of the bind we are able to access the onclick properties
+    //         console.log(this.username)
+    //     }
+    // }
+    // const user1 = new onClick('Nabil', '123456')
+    // console.log(user1)
+
+    // arrow function overcome the this problem
+    // class onClick{
+    //     constructor(username, password){
+    //         this.username = username
+    //         this.password = password
+    //         // document.querySelector('button').addEventListener('click', this.buttonClicked)
+    //         // here we have set this inside bind do that the button clicked can als access the on click properties which is not possible without .bind
+    //         document.querySelector('button').addEventListener('click', () => this.buttonClicked())
+    //     }
+    //     buttonClicked(){
+    //         console.log('Button Clicked')
+    //         console.log(this)
+    //         // because of the bind we are able to access the onclick properties
+    //         console.log(this.username)
+    //     }
+    // }
+    // const user1 = new onClick('Nabil', '123456')
+    // console.log(user1)
+</script>
+</html>
+
