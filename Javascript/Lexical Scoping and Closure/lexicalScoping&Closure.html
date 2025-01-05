@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexical Scoping & Closure</title>
+</head>
+<body style="background-color: rgb(38, 36, 36);">
+    <button id="lightblue">light blue</button>
+    <button id="lightgrey">light grey</button>
+</body>
+<script>
+    // Lexical Scoping
+    // Lexical Scoping is nothing but a rule that defines how variables behave of the outer function inside the inner function
+    // in short the variables of the parent function can be accessed by the child function this is called lexical scoping
+    // function details(){
+    //     let username = 'Nabil'
+    //     function printMe(){
+    //         console.log('inner' ,username)
+    //     }
+    //     printMe()
+    // }
+    // details()
+</script>
+<script>
+    // Closure
+    // closure is nothing but a mechanism which stores the scope or we can say variables of the outer function(parent) with the inner function(child) when the inner function is returned or triggered
+    // function outer(){
+    //     let name = 'Nabil'
+    //     // let age = 22
+    //     function inner(){
+    //         console.log("inner function", name)
+    //     }
+    //     inner()
+    // }
+    // let outer1 = outer
+    // outer1()
+    
+    
+    // in this example we have returned the unnamed function which is nothig but a callback function inside the other function so here the color is a variable which is available withe the outer function but can be accessed by the inner function because of the closure mechanism and lexical scoping rule
+    function bgColorHandler(color){
+        // document.body.style.background = `${color}`
+        return () => {
+        document.body.style.background = `${color}`
+        }
+    }
+    document.getElementById('lightblue').addEventListener('click', bgColorHandler('lightblue'))
+    document.getElementById('lightgrey').addEventListener('click', bgColorHandler('lightgrey'))
+
+</script>
+</html>
